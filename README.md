@@ -1,6 +1,13 @@
+# Setup
+
+```shell
+poetry init
+poetry add dbt-databricks
+poetry shell
+dbt init
+```
+
 # dbt-transformation-inocircle-day
-
-
 
 ## Getting started
 
