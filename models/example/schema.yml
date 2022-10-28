@@ -1,21 +1,41 @@
-
 version: 2
 
 models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+  - name: age_distribution
+    description: "Age distribution of customers"
+    columns:
+      - name: c_birth_year
+        description: "Birth year"
+      - name: n_customers
+        description: "Number of customers"
 
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+sources:
+  - name: bronze_1g
+    description: "Raw blob storage source"
+    tables:
+      - name: customer
+        columns:
+          - name: c_customer_sk
+            description: "customer sk"
+          - name: c_customer_id
+            description: "customer id"
+          - name: c_current_addr_sk
+            description: "current address"
+          - name: c_first_name
+            description: "first name"
+          - name: c_last_name
+            description: "last name"
+          - name: c_preferred_cust_flag
+            description: "customer flag"
+          - name: c_birth_day
+            description: "day of birth"
+          - name: c_birth_month
+            description: "month of birth"
+          - name: c_birth_year
+            description: "year of birth"
+          - name: c_birth_country
+            description: "country of birth"
+          - name: c_login
+            description: "login"
+          - name: c_email_address
+            description: "email address"
